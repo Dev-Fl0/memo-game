@@ -6,7 +6,7 @@ dotenv.config();
 const express = require("express");
 const router = require("./src/router");
 const sessionMiddleware = require("./src/middlewares/sessionMiddleware");
-// const loadSessionUserInLocals = require("./src/middlewares/loadSessionUserInLocals");
+const loadSessionUserInLocals = require("./src/middlewares/loadSessionUserInLocals");
 
 // Create application
 const app = express();
@@ -21,15 +21,13 @@ app.use(express.static("public"));
 // Body parsers
 app.use(express.urlencoded({ extended: false }));
 
-/*
+
 // User session
 app.use(sessionMiddleware); // En sortie de ce middleware, on a : req.session = { ... }
-*/
 
-/*
+
 // Add user info in res.locals (=> for display in header.ejs)
 app.use(loadSessionUserInLocals);
-*/
 
 // Plug router
 app.use(router);

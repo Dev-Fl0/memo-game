@@ -1,10 +1,10 @@
 const session = require("express-session");
 
 const sessionMiddleware = session({
-  secret: process.env.SESSION_SECRET, // pour générer des SID (clé de session) difficile à deviner
-  resave: false, // ne pas ré-enregistrer la session à chaque requête si rien n'a changé dans la session
-  saveUninitialized: true, // créer une session même si on ne stock rien de particulier dedans
-  cookie: { secure: false, maxAge: 1000 * 60 * 60 } // secure false tant qu'on est en HTTP // durée du cookie = 1h ===> lorsqu'on se loggin, on sera connecté 1h, pas plus !
+    secret: process.env.SESSION_SECRET, // pour générer des SID (clé de session) difficile à deviner
+    resave: false, // ne pas ré-enregistrer la session à chaque requête si rien n'a changé dans la session
+    saveUninitialized: true, // créer une session même si on ne stock rien de particulier dedans
+    cookie: { secure: false, maxAge: 1000 * 60 * 60 }, // secure false tant qu'on est en HTTP // durée du cookie = 1h ===> lorsqu'on se loggin, on sera connecté 1h, pas plus !
 });
 // Que fait ce middleware ?
 
