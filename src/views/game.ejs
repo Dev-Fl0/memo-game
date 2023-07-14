@@ -1,6 +1,5 @@
 <%- include('partials/header') %>
 
-
 <main class="container py-4">
     <!-- Welcome -->
     <div class="text-center">
@@ -12,15 +11,22 @@
     <!-- Cards -->
     <div class="game-coutainer">
         <% cards.forEach(card => { %>
+        <div class="card turn-On" id="card<%= card.id %>" data-img-src="<%= card.img_src %>">
+            <img
+                class="img_src"
+                src="/images/carte.png"
+                alt="<%= card.name %>"
+            />
+        </div>
+        <% }) %> <% cardsMixed.forEach(card => { %>
         <div class="card turn-On" id="card" data-img-src="<%= card.img_src %>">
-          <img class="img_src" src="/images/carte.png" alt="<%= card.name %>" />
+            <img
+                class="img_src"
+                src="/images/carte.png"
+                alt="<%= card.name %>"
+            />
         </div>
         <% }) %>
-        <% cardsMixed.forEach(card => { %>
-          <div class=" card turn-On" id="card" data-img-src="<%= card.img_src %>">
-              <img class="img_src" src="/images/carte.png" alt="<%= card.name %>" />
-          </div>
-          <% }) %>
     </div>
 </main>
 

@@ -20,10 +20,6 @@ a:hover {
   max-width: 6rem;
 }
 
-.turn-On {
-
-}
-
-.turn-Off {
-
+* {
+  user-select: none;
 }
